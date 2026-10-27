@@ -28,6 +28,7 @@ Your post, in Markdown. ## for section headings, **bold**, *italic*, [links](htt
 - `templates/` — the page designs, written in the dark palette (homepage is `templates/home.html`)
 - `theme.mjs` — the light theme: each dark colour and its light counterpart
 - `static/_redirects` — old addresses → new ones
-- Forms (newsletter, contact) arrive in Netlify → Forms
+- Contact form messages arrive in Netlify → Forms
+- Newsletter signups go to beehiiv through `netlify/functions/subscribe.mjs` (needs the `BEEHIIV_API_KEY` environment variable in Netlify)
 
 Preview locally: `npm install && npm run build`, then open `dist/`.

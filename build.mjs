@@ -221,6 +221,7 @@ writeFileSync(join(OUT, "404.html"), themed(messagePage("Page not found · The 1
 const CALL = "https://calendar.app.google/crG9ExWinyMXmka69";
 writeFileSync(join(OUT, "thanks.html"), themed(messagePage("Thanks · The 10x Manager Academy", "Thanks, I've got your note.", `I read every message myself and will reply by email. Want to talk sooner? <a href="${CALL}" target="_blank" rel="noopener">Book a free scoping call</a>.`, startHere("// while you wait", "0 24px 120px"))));
 writeFileSync(join(OUT, "subscribed.html"), themed(messagePage("You're subscribed · The 10x Manager Academy", "You're on the list.", "The next issue lands in your inbox. Until then, this is where most readers start:", startHere("// start here", "0 24px 120px"), { newsletter: false })));
+writeFileSync(join(OUT, "subscribe-error.html"), themed(messagePage("Something went wrong · The 10x Manager Academy", "That didn't go through.", `Your email wasn't added. Please check it and <a href="/#newsletter">try again</a>, or email <a href="mailto:hello@the10xmanager.academy">hello@the10xmanager.academy</a> and I'll add you myself.`)));
 writeFileSync(join(OUT, "blog-feed.xml"), rss);
 writeFileSync(join(OUT, "sitemap.xml"), sitemap);
 writeFileSync(join(OUT, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
