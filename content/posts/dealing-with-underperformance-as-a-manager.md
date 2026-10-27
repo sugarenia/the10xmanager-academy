@@ -4,10 +4,10 @@ date: "2021-11-21"
 topic: "feedback"
 excerpt: "Address underperformance by identifying causes, providing clear feedback, and supporting employees with a structured improvement plan to enhance productivity."
 seoDescription: "Address underperformance by identifying causes, providing clear feedback, and supporting employees with a structured improvement plan to enhance productivity."
-cover: "https://static.wixstatic.com/media/048247_cbf01170ed1d41d0963d040f5c1b4fbc~mv2.jpg"
+cover: "/assets/posts/048247_cbf01170ed1d41d0963d040f5c1b4fbc.jpg"
 ---
 
-![An aerial view of a winding road in the mountains](https://static.wixstatic.com/media/048247_cbf01170ed1d41d0963d040f5c1b4fbc~mv2.jpg)
+![An aerial view of a winding road in the mountains](/assets/posts/048247_cbf01170ed1d41d0963d040f5c1b4fbc.jpg)
 
 Helping underperformers to get out of a productivity rut is one of the trickiest manager tasks. Poor performance can manifest in a couple of different ways. Sometimes it’s a new hire not living up to business expectations; others, it’s a trusted team member who suddenly experiences a productivity drop. However, poor performance is not necessarily an irreversible situation. It can often be a request for help. A great manager will go into the extra trouble to help their team member while being fair to the rest of the team.
 

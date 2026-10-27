@@ -4,10 +4,10 @@ date: "2020-08-24"
 topic: "communication"
 excerpt: "Make the most of 1:1 meetings by building trust, setting a structured agenda, and being present and flexible with your direct reports."
 seoDescription: "Make the most of 1:1 meetings by building trust, setting a structured agenda, and being present and flexible with your direct reports."
-cover: "https://static.wixstatic.com/media/048247_d0acb961681142c2b3eecabd5ff08fdc~mv2.jpeg"
+cover: "/assets/posts/048247_d0acb961681142c2b3eecabd5ff08fdc.jpg"
 ---
 
-![Two people holding coffees, shot from above the table](https://static.wixstatic.com/media/048247_d0acb961681142c2b3eecabd5ff08fdc~mv2.jpeg)
+![Two people holding coffees, shot from above the table](/assets/posts/048247_d0acb961681142c2b3eecabd5ff08fdc.jpg)
 
 Either you’re new to management, researching how to get started or you’re an experienced leader that wants to ensure their team is on the right path, regularly meeting with your direct reports should be the cornerstone of your day-to-day. In this issue of Leading by Design, we’re going to examine the practice and value of running a 1:1 meeting.
 

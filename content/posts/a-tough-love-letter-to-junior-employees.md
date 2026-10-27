@@ -4,10 +4,10 @@ date: "2024-08-16"
 topic: "careers"
 excerpt: "My most common professionalism tips to junior employees and people entering the workforce."
 seoDescription: "Discover essential advice for junior and Gen Z employees navigating the workforce. Learn how to overcome challenges, embrace feedback, and build a meaningful career despite early disillusionment."
-cover: "https://static.wixstatic.com/media/048247_277590ae90f5475f9fbc53013f9ce6f4~mv2.jpg"
+cover: "/assets/posts/048247_277590ae90f5475f9fbc53013f9ce6f4.jpg"
 ---
 
-!["This is the sign you've been looking for" sign on a brick wall](https://static.wixstatic.com/media/048247_277590ae90f5475f9fbc53013f9ce6f4~mv2.jpg)
+!["This is the sign you've been looking for" sign on a brick wall](/assets/posts/048247_277590ae90f5475f9fbc53013f9ce6f4.jpg)
 
 Since childhood, we have all had preconceived notions of what work looks like. We grow up with a mix of pop culture references about cool versus boring jobs and good versus bad colleagues, and most of us enter the workforce thinking we’ve got it. We know what work is.
 

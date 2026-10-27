@@ -4,10 +4,10 @@ date: "2020-09-23"
 topic: "remote"
 excerpt: "Build trust, use asynchronous communication, and document everything to effectively manage remote teams and ensure productivity & alignment."
 seoDescription: "Build trust, use asynchronous communication, and document everything to effectively manage remote teams and ensure productivity & alignment."
-cover: "https://static.wixstatic.com/media/048247_e787cb16593f48e59433d42be9af355c~mv2.jpg"
+cover: "/assets/posts/048247_e787cb16593f48e59433d42be9af355c.jpg"
 ---
 
-![Remote cabin near a mountain under clouds](https://static.wixstatic.com/media/048247_e787cb16593f48e59433d42be9af355c~mv2.jpg)
+![Remote cabin near a mountain under clouds](/assets/posts/048247_e787cb16593f48e59433d42be9af355c.jpg)
 
 According to TIME magazine, [the coronavirus outbreak has become the world’s largest work-from-home experiment](https://time.com/5776660/coronavirus-work-from-home/). All of a sudden, companies around the world had to make the abrupt switch to remote work, even if it wasn’t previously considered an option. It was either adapt or go bust.
 

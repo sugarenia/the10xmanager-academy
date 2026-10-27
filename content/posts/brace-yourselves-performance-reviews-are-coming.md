@@ -4,10 +4,10 @@ date: "2020-11-23"
 topic: "feedback"
 excerpt: "Rethink annual performance reviews by considering Continuous Performance Management (CPM) for regular feedback and better alignment."
 seoDescription: "Rethink annual performance reviews by considering Continuous Performance Management (CPM) for regular feedback and better alignment."
-cover: "https://static.wixstatic.com/media/048247_9f5c6adafab842b8855561d5c910c1a1~mv2.jpg"
+cover: "/assets/posts/048247_9f5c6adafab842b8855561d5c910c1a1.jpg"
 ---
 
-![A crashing wave in the dusk](https://static.wixstatic.com/media/048247_9f5c6adafab842b8855561d5c910c1a1~mv2.jpg)
+![A crashing wave in the dusk](/assets/posts/048247_9f5c6adafab842b8855561d5c910c1a1.jpg)
 
 Every year, like clockwork, management teams in companies around the world spend hundreds of hours putting together and communicating annual reviews to their team members. Studies show that managers [spend more than 200 hours a year](https://www.independent.co.uk/news/business/news/accenture-one-world-s-biggest-companies-scrap-annual-performance-reviews-10421296.html) preparing, writing and sharing reviews with their reports. For every review season, that amounts to an average of 7.5 hours per direct report. From personal experience, I can attest that this can increase even more, especially for end-of-year reviews which tend to be more comprehensive.
 

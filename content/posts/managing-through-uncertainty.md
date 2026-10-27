@@ -4,10 +4,10 @@ date: "2025-01-07"
 topic: "communication"
 excerpt: "Learn how to navigate the chaos of being a middle manager in tough, uncertain times."
 seoDescription: "Discover how middle managers can navigate uncertainty during downturns, avoid self-sabotage, and support their teams with confidence."
-cover: "https://static.wixstatic.com/media/048247_3ce729ab0979465db6ff62a80775ae42~mv2.jpg"
+cover: "/assets/posts/048247_3ce729ab0979465db6ff62a80775ae42.jpg"
 ---
 
-![Flat lay of bizzare and colorful objects on white background](https://static.wixstatic.com/media/048247_3ce729ab0979465db6ff62a80775ae42~mv2.jpg "Photo by Alexander Zabrodskiy on Unsplash")
+![Flat lay of bizzare and colorful objects on white background](/assets/posts/048247_3ce729ab0979465db6ff62a80775ae42.jpg "Photo by Alexander Zabrodskiy on Unsplash")
 
 Picture yourself standing between crashing waves and a sandcastle. That's what being a middle manager feels like during a downturn—you're the barrier between organisational turbulence and your team's stability. It's a thankless job that goes far beyond the standard duties of '[giving feedback](/post/no-feedback-culture)' and '[delegating tasks](https://www.the10xmanager.academy/templates/delegation)'.
 

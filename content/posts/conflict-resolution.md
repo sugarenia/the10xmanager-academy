@@ -4,10 +4,10 @@ date: "2022-02-21"
 topic: "communication"
 excerpt: "Resolve workplace conflicts effectively by fostering psychological safety, addressing issues early, and promoting respectful dialogue."
 seoDescription: "Resolve workplace conflicts effectively by fostering psychological safety, addressing issues early, and promoting respectful dialogue."
-cover: "https://static.wixstatic.com/media/048247_fb9d929b3f78424f926995ac89504e0a~mv2.jpg"
+cover: "/assets/posts/048247_fb9d929b3f78424f926995ac89504e0a.jpg"
 ---
 
-![Blue yellow and green parrot on brown tree branch](https://static.wixstatic.com/media/048247_fb9d929b3f78424f926995ac89504e0a~mv2.jpg)
+![Blue yellow and green parrot on brown tree branch](/assets/posts/048247_fb9d929b3f78424f926995ac89504e0a.jpg)
 
 In a typical workplace setting, conflict is unavoidable. When you gather a bunch of passionate people in a room, there’s no way the stars will align, causing everyone to move in the same direction without even the slightest friction. Take into account the complicated power dynamics because of reporting lines, and the mix gets even more explosive.
 

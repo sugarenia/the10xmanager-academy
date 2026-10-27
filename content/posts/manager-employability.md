@@ -4,10 +4,10 @@ date: "2023-11-09"
 topic: "careers"
 excerpt: "Enhance your employability as a manager by diversifying your skill set, maintaining visibility, and adapting to both managerial and individual contributor roles."
 seoDescription: "Enhance your employability as a manager by diversifying your skill set, maintaining visibility, and adapting to both managerial and individual contributor roles."
-cover: "https://static.wixstatic.com/media/048247_29e2adef6d7d4993a32f22ce47f739ba~mv2.jpg"
+cover: "/assets/posts/048247_29e2adef6d7d4993a32f22ce47f739ba.jpg"
 ---
 
-![Green grass field with pathway under blue sky](https://static.wixstatic.com/media/048247_29e2adef6d7d4993a32f22ce47f739ba~mv2.jpg)
+![Green grass field with pathway under blue sky](/assets/posts/048247_29e2adef6d7d4993a32f22ce47f739ba.jpg)
 
 I’ve been [writing](https://www.sugarenia.com/blog/) and [speaking](https://www.sugarenia.com/speaking/) about transitioning from an individual contributor to a managerial position for quite some time now. I’ve talked with numerous people who contemplated the switch but were conscious of their future options. It’s time to settle this: will moving to a management position make you more desirable to employers?
 

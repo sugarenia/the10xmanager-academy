@@ -4,10 +4,10 @@ date: "2024-12-06"
 topic: "careers"
 excerpt: "Learn to influence without formal authority, with real-life scenarios on how lead effectively in any role."
 seoDescription: "Learn to navigate the workplace and influence without formal authority. Discover real-life scenarios on how to influence and lead effectively in any role."
-cover: "https://static.wixstatic.com/media/048247_d27dd0669cb248d482bdbc544e107bce~mv2.jpg"
+cover: "/assets/posts/048247_d27dd0669cb248d482bdbc544e107bce.jpg"
 ---
 
-![Flat lay of bizzare and colorful objects on white background](https://static.wixstatic.com/media/048247_d27dd0669cb248d482bdbc544e107bce~mv2.jpg)
+![Flat lay of bizzare and colorful objects on white background](/assets/posts/048247_d27dd0669cb248d482bdbc544e107bce.jpg)
 
 Influence without authority is frequently mentioned in organisational psychology and leadership studies. It's also the title of a popular book on organisational behaviour, [<u>Influence Without Authority</u>](https://www.goodreads.com/book/show/123686.Influence_Without_Authority?from_search=true&from_srp=true&qid=H6cjEDfs5t&rank=1), by Allan R. Cohen and David L. Bradford, first published in 1989. And it's one of the most common struggles in the workforce, whether one's a senior executive or an entry-level employee.
 

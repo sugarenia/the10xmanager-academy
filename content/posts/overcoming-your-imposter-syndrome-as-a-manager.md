@@ -4,10 +4,10 @@ date: "2021-02-22"
 topic: "new-managers"
 excerpt: "Overcome imposter syndrome as a manager by seeking feedback, acknowledging your role in team success, and creating a supportive environment"
 seoDescription: "Overcome imposter syndrome as a manager by seeking feedback, acknowledging your role in team success, and creating a supportive environment "
-cover: "https://static.wixstatic.com/media/048247_670890e9b1d14a498c88c9e8a22ee254~mv2.jpg"
+cover: "/assets/posts/048247_670890e9b1d14a498c88c9e8a22ee254.jpg"
 ---
 
-![a close up of a red and green leafy plant](https://static.wixstatic.com/media/048247_670890e9b1d14a498c88c9e8a22ee254~mv2.jpg)
+![a close up of a red and green leafy plant](/assets/posts/048247_670890e9b1d14a498c88c9e8a22ee254.jpg)
 
 Imposter syndrome (or rather Imposter Phenomenon) was first coined as a term in 1978 by psychologists Pauline Clance and Suzanne Imes. Their [now classic research](https://www.paulineroseclance.com/pdf/ip_high_achieving_women.pdf) explored the general feeling of malaise present in graduate students, especially prevalent between highly accomplished women.
 

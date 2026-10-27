@@ -4,10 +4,10 @@ date: "2022-10-23"
 topic: "org-design"
 excerpt: "Survive a reorg by breaking down silos, owning the strategy, creating a communication plan, setting boundaries, and advocating for your team."
 seoDescription: "Survive a reorg by breaking down silos, owning the strategy, creating a communication plan, setting boundaries, and advocating for your team."
-cover: "https://static.wixstatic.com/media/048247_7178f5db5d904439a4e9a6d5ddd40e07~mv2.jpg"
+cover: "/assets/posts/048247_7178f5db5d904439a4e9a6d5ddd40e07.jpg"
 ---
 
-![A black and white photo of a bunch of cubes](https://static.wixstatic.com/media/048247_7178f5db5d904439a4e9a6d5ddd40e07~mv2.jpg)
+![A black and white photo of a bunch of cubes](/assets/posts/048247_7178f5db5d904439a4e9a6d5ddd40e07.jpg)
 
 Are you familiar with the term “reorg”, dear reader? Because I can almost see the profound dread on your faces while scowling at that title.
 

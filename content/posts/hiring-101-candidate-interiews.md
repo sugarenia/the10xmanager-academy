@@ -4,10 +4,10 @@ date: "2021-08-31"
 topic: "hiring"
 excerpt: "Prepare for interviews by creating a structured process, sharing clear information with candidates, and using scorecards."
 seoDescription: "Prepare for interviews by creating a structured process, sharing clear information with candidates, and using scorecards."
-cover: "https://static.wixstatic.com/media/048247_531008814ef7402f8b90b4a739f482d1~mv2.jpg"
+cover: "/assets/posts/048247_531008814ef7402f8b90b4a739f482d1.jpg"
 ---
 
-![Microphone in shallow focus](https://static.wixstatic.com/media/048247_531008814ef7402f8b90b4a739f482d1~mv2.jpg)
+![Microphone in shallow focus](/assets/posts/048247_531008814ef7402f8b90b4a739f482d1.jpg)
 
 In the previous *Hiring 101* newsletter issues, we examined how to prepare a structured, collaborative hiring process, write a compelling job description and attract diverse candidates.
 

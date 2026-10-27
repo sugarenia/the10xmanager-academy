@@ -4,10 +4,10 @@ date: "2020-10-19"
 topic: "remote"
 excerpt: "Standardize remote onboarding, set clear objectives, introduce team culture, and seek feedback for effective integration of new hires."
 seoDescription: "Standardize remote onboarding, set clear objectives, introduce team culture, and seek feedback for effective integration of new hires."
-cover: "https://static.wixstatic.com/media/048247_02fcdf2d438448788519bbc9ac8945ea~mv2.jpg"
+cover: "/assets/posts/048247_02fcdf2d438448788519bbc9ac8945ea.jpg"
 ---
 
-![A boat sailing on the water](https://static.wixstatic.com/media/048247_02fcdf2d438448788519bbc9ac8945ea~mv2.jpg)
+![A boat sailing on the water](/assets/posts/048247_02fcdf2d438448788519bbc9ac8945ea.jpg)
 
 Onboarding employees, the process of helping them navigate their stressful first few weeks, can be a make-or-break process for your organization. [According to a Glassdoor survey](https://b2b-assets.glassdoor.com/the-true-cost-of-a-bad-hire.pdf), great employee onboarding can improve employee retention by 82%. A surprisingly high amount of staff turnover (as high as 20 percent) can happen within their first 45 days. Traditional, co-located onboarding is challenging enough, and it has become much more demanding now that almost every employed knowledge worker works from home for the foreseeable future.
 

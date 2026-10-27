@@ -4,10 +4,10 @@ date: "2023-02-06"
 topic: "careers"
 excerpt: "Support managers in your te by setting clear expectations, providing regular feedback, and promoting continuous learning & development"
 seoDescription: "Support managers in your te by setting clear expectations, providing regular feedback, and promoting continuous learning & development"
-cover: "https://static.wixstatic.com/media/048247_4a166e54dbfc4da9ab2ef21a53c21e2a~mv2.jpg"
+cover: "/assets/posts/048247_4a166e54dbfc4da9ab2ef21a53c21e2a.jpg"
 ---
 
-![Landscape photography of mountains](https://static.wixstatic.com/media/048247_4a166e54dbfc4da9ab2ef21a53c21e2a~mv2.jpg)
+![Landscape photography of mountains](/assets/posts/048247_4a166e54dbfc4da9ab2ef21a53c21e2a.jpg)
 
 The transition from a manager to a director is an oft-overlooked one, even though it comes with its unique set of challenges. It can be even more complex than the jarring transition from individual contribution to people management.
 

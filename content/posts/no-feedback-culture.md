@@ -4,10 +4,10 @@ date: "2023-09-11"
 topic: "feedback"
 excerpt: "Fix a no-feedback culture by aligning goals, fostering trust, giving praise,  and recognizing effective feedback."
 seoDescription: "Fix a no-feedback culture by aligning goals, fostering trust, giving praise,  and recognizing effective feedback."
-cover: "https://static.wixstatic.com/media/048247_fe504a6a7eb240e6b56547faa74c91b6~mv2.jpg"
+cover: "/assets/posts/048247_fe504a6a7eb240e6b56547faa74c91b6.jpg"
 ---
 
-![Person showing thumb up among green plants](https://static.wixstatic.com/media/048247_fe504a6a7eb240e6b56547faa74c91b6~mv2.jpg)
+![Person showing thumb up among green plants](/assets/posts/048247_fe504a6a7eb240e6b56547faa74c91b6.jpg)
 
 As managers, we talk a lot about sharing feedback but don’t always align on what it entails. Feedback is more than a manager telling employees how their work stacks up to corporate quality standards. It’s a constant dialogue that fosters learning, growth, and development at all levels.
 

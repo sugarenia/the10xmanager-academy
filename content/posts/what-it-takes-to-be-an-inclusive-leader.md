@@ -4,10 +4,10 @@ date: "2020-07-20"
 topic: "inclusion"
 excerpt: "Inclusive leaders create diverse, safe environments, show humility, and value all team contributions to boost innovation and performance."
 seoDescription: "Inclusive leaders create diverse, safe environments, show humility, and value all team contributions to boost innovation and performance."
-cover: "https://static.wixstatic.com/media/048247_533c968b93304114a6271fff005ebada~mv2.jpg"
+cover: "/assets/posts/048247_533c968b93304114a6271fff005ebada.jpg"
 ---
 
-![Multi-colored pencils on a black background](https://static.wixstatic.com/media/048247_533c968b93304114a6271fff005ebada~mv2.jpg)
+![Multi-colored pencils on a black background](/assets/posts/048247_533c968b93304114a6271fff005ebada.jpg)
 
 Diversity and Inclusion (or D&I for short) is an increasingly popular term these past few years, especially in tech. Every time that a particularly extreme behaviour comes to light, people tend to flock to D&I, using it as a talisman. Lots of companies swear to change and offer their support to social movements like [BLM](https://blacklivesmatter.com/), but very few of them follow up on their promises. As Aubrey Blanche, former Global Head of Diversity & Belonging in Atlassian, [mentions](https://firstround.com/review/eight-ways-to-make-your-dandi-efforts-less-talk-and-more-walk/):
 

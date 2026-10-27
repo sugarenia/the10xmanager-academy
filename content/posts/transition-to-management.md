@@ -4,10 +4,10 @@ date: "2020-06-23"
 topic: "new-managers"
 excerpt: "Learn how to transition into management by demonstrating leadership and effective communication."
 seoDescription: "Learn how to transition into management by demonstrating leadership and effective communication."
-cover: "https://static.wixstatic.com/media/048247_c50f9f1858c64ecd8f34b117efe5cbb1~mv2.jpg"
+cover: "/assets/posts/048247_c50f9f1858c64ecd8f34b117efe5cbb1.jpg"
 ---
 
-![A couple of ducks frolicking on water](https://static.wixstatic.com/media/048247_c50f9f1858c64ecd8f34b117efe5cbb1~mv2.jpg)
+![A couple of ducks frolicking on water](/assets/posts/048247_c50f9f1858c64ecd8f34b117efe5cbb1.jpg)
 
 For most companies, the path from an individual contributor to a people manager is not straightforward. More often than not, there are no clear end goals in sight that you have to achieve before becoming a manager. People can be promoted either by working hard and proving their worth or by purely coincidental reasons like the resignation of a senior member.
 

@@ -4,10 +4,10 @@ date: "2021-06-21"
 topic: "hiring"
 excerpt: "Write an effective job description by being specific about the role, avoiding jargon, stating clear requirements, and highlighting perks."
 seoDescription: "Write an effective job description by being specific about the role, avoiding jargon, stating clear requirements, and highlighting perks."
-cover: "https://static.wixstatic.com/media/048247_293353cb05824a6f981039673126f432~mv2.jpg"
+cover: "/assets/posts/048247_293353cb05824a6f981039673126f432.jpg"
 ---
 
-![Brown pencil on white printing paper](https://static.wixstatic.com/media/048247_293353cb05824a6f981039673126f432~mv2.jpg)
+![Brown pencil on white printing paper](/assets/posts/048247_293353cb05824a6f981039673126f432.jpg)
 
 In the previous *Hiring 101* issue, we learned about all the mise-en-place that’s needed before you start hiring. To recap, you should start by asking yourself why do you need a new hire. Then, you and your team should work together to clarify roles & responsibilities and start thinking about new member onboarding (yes, that early).
 

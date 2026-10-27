@@ -4,10 +4,10 @@ date: "2021-07-26"
 topic: "hiring"
 excerpt: "Use gender-neutral language, highlight diverse policies, advertise on niche job boards, and seek referrals to attract diverse candidates."
 seoDescription: "Use gender-neutral language, highlight diverse policies, advertise on niche job boards, and seek referrals to attract diverse candidates."
-cover: "https://static.wixstatic.com/media/048247_814a919610a24b7ca3ed75876ee532ee~mv2.jpg"
+cover: "/assets/posts/048247_814a919610a24b7ca3ed75876ee532ee.jpg"
 ---
 
-![White and red paper lanterns in Hoi An, Vietnam](https://static.wixstatic.com/media/048247_814a919610a24b7ca3ed75876ee532ee~mv2.jpg)
+![White and red paper lanterns in Hoi An, Vietnam](/assets/posts/048247_814a919610a24b7ca3ed75876ee532ee.jpg)
 
 In the previous *Hiring 101* newsletter issues, we put together a collaborative process to prepare for your hiring round. We also examined methods that you can use to improve and elevate your job descriptions.
 

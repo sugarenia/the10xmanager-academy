@@ -4,10 +4,10 @@ date: "2023-04-17"
 topic: "communication"
 excerpt: "At senior levels, meetings are essential work, serving as platforms for decision-making, strategy alignment, and team collaboration."
 seoDescription: "At senior levels, meetings are essential work, serving as platforms for decision-making, strategy alignment, and team collaboration."
-cover: "https://static.wixstatic.com/media/048247_932a40fb7e12433c8f21914932265ec1~mv2.jpg"
+cover: "/assets/posts/048247_932a40fb7e12433c8f21914932265ec1.jpg"
 ---
 
-![Oval brown wooden conference table and chairs inside conference room](https://static.wixstatic.com/media/048247_932a40fb7e12433c8f21914932265ec1~mv2.jpg)
+![Oval brown wooden conference table and chairs inside conference room](/assets/posts/048247_932a40fb7e12433c8f21914932265ec1.jpg)
 
 (Disclaimer: In this article, the term “senior employee” refers to an employee with extensive experience, not necessarily an individual of advanced age. Business slang is weird.)
 

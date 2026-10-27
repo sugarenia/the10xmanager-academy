@@ -4,10 +4,10 @@ date: "2022-03-29"
 topic: "managing-up"
 excerpt: "If your manager ignores you, address it directly, provide specific feedback, and explore alternative communication solutions."
 seoDescription: "If your manager ignores you, address it directly, provide specific feedback, and explore alternative communication solutions."
-cover: "https://static.wixstatic.com/media/048247_6bc2ad327b444f64bc7ddc610277bb44~mv2.jpg"
+cover: "/assets/posts/048247_6bc2ad327b444f64bc7ddc610277bb44.jpg"
 ---
 
-![Blue padlock on a blue door](https://static.wixstatic.com/media/048247_6bc2ad327b444f64bc7ddc610277bb44~mv2.jpg)
+![Blue padlock on a blue door](/assets/posts/048247_6bc2ad327b444f64bc7ddc610277bb44.jpg)
 
 We’ve all read it in countless books and articles; your manager should inspire and support you. They are supposed to listen to your career objectives, assign you stretch projects, and guide you to growth. They will also remove any obstacles from the way to allow you to do your best job.
 

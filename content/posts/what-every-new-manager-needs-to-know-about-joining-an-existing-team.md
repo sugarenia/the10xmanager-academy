@@ -4,10 +4,10 @@ date: "2024-10-14"
 topic: "new-managers"
 excerpt: "Learn how to navigate the challenges of being a new manager joining an existing team with strategies to build trust and lead effectively."
 seoDescription: "Learn how to navigate the challenges of being a new manager joining an existing team with strategies to build trust and lead effectively."
-cover: "https://static.wixstatic.com/media/048247_6b14e2b30c104213be141ffb78948284~mv2.jpg"
+cover: "/assets/posts/048247_6b14e2b30c104213be141ffb78948284.jpg"
 ---
 
-![Flat lay of bizzare and colorful objects on white background](https://static.wixstatic.com/media/048247_6b14e2b30c104213be141ffb78948284~mv2.jpg)
+![Flat lay of bizzare and colorful objects on white background](/assets/posts/048247_6b14e2b30c104213be141ffb78948284.jpg)
 
 I write a lot about emerging managers. Those people naturally stand out as leaders and are eventually placed in management positions to lead their own teams. Not all managers fall under this category, though. As a leader grows in seniority, they might join the management team in a new company, which comes with a whole new crop of challenges.
 

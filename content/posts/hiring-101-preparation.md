@@ -4,10 +4,10 @@ date: "2021-03-21"
 topic: "hiring"
 excerpt: "Prepare for your first hiring round by clarifying roles, defining the job scope, planning onboarding, and communicating your hiring needs."
 seoDescription: "Prepare for your first hiring round by clarifying roles, defining the job scope, planning onboarding, and communicating your hiring needs."
-cover: "https://static.wixstatic.com/media/048247_6921b9a2598241babc8da807516d0489~mv2.jpg"
+cover: "/assets/posts/048247_6921b9a2598241babc8da807516d0489.jpg"
 ---
 
-![A kitchen counter with a cutting board, knife and vegetables](https://static.wixstatic.com/media/048247_6921b9a2598241babc8da807516d0489~mv2.jpg)
+![A kitchen counter with a cutting board, knife and vegetables](/assets/posts/048247_6921b9a2598241babc8da807516d0489.jpg)
 
 Exciting times! Your small team is expanding, and you’re ready to kickstart your first hiring round! You’re already thinking about how to attract good talent, daydreaming about all the fantastic work you’ll do together. You want to hire the best person for the role fast and make them feel productive even faster.
 

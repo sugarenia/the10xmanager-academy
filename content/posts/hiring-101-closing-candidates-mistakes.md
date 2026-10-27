@@ -4,10 +4,10 @@ date: "2021-10-17"
 topic: "hiring"
 excerpt: "Avoid common candidate offer mistakes: get references, review all candidates, provide feedback, negotiate full packages, and keep in touch."
 seoDescription: "Avoid common candidate offer mistakes: get references, review all candidates, provide feedback, negotiate full packages, and keep in touch."
-cover: "https://static.wixstatic.com/media/048247_6c17fa916aed46c68ae7f616d1556020~mv2.jpg"
+cover: "/assets/posts/048247_6c17fa916aed46c68ae7f616d1556020.jpg"
 ---
 
-![Hola LED signage photo](https://static.wixstatic.com/media/048247_6c17fa916aed46c68ae7f616d1556020~mv2.jpg)
+![Hola LED signage photo](/assets/posts/048247_6c17fa916aed46c68ae7f616d1556020.jpg)
 
 After a blissfully short and focused hiring period, your hiring team has curated a spectacular shortlist of candidates that would be a perfect fit for that opening in your team. One might be tempted to think that the bulk of your work is finished. One would be sorely mistaken.
 

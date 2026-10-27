@@ -4,10 +4,10 @@ date: "2021-01-25"
 topic: "managing-up"
 excerpt: "Learn to manage up by communicating openly with your manager, preparing for 1:1 meetings, acting on feedback, and raising concerns early."
 seoDescription: "Learn to manage up by communicating openly with your manager, preparing for 1:1 meetings, acting on feedback, and raising concerns early."
-cover: "https://static.wixstatic.com/media/048247_86f9a72fb43a4433945a4ffd940882c3~mv2.jpg"
+cover: "/assets/posts/048247_86f9a72fb43a4433945a4ffd940882c3.jpg"
 ---
 
-![An AI rendition of an abstract train travelling on rails, with several blocked passages and some redirects as well.](https://static.wixstatic.com/media/048247_86f9a72fb43a4433945a4ffd940882c3~mv2.jpg)
+![An AI rendition of an abstract train travelling on rails, with several blocked passages and some redirects as well.](/assets/posts/048247_86f9a72fb43a4433945a4ffd940882c3.jpg)
 
 Almost all of us started our careers as individual contributors first and migrated to managing people later. We all have a ton of opinions on how our managers should manage us. Then why is the transition to a manager so tricky?
 

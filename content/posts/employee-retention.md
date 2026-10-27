@@ -4,10 +4,10 @@ date: "2022-09-13"
 topic: "hiring"
 excerpt: "Retain employees with fair pay, acting on feedback, supporting remote work, including them in the vision, and fostering trust."
 seoDescription: "Retain employees with fair pay, acting on feedback, supporting remote work, including them in the vision, and fostering trust."
-cover: "https://static.wixstatic.com/media/048247_e102d569e08547bc9b8dfd88f9245332~mv2.jpg"
+cover: "/assets/posts/048247_e102d569e08547bc9b8dfd88f9245332.jpg"
 ---
 
-![Green glass jars on brown wooden fence](https://static.wixstatic.com/media/048247_e102d569e08547bc9b8dfd88f9245332~mv2.jpg)
+![Green glass jars on brown wooden fence](/assets/posts/048247_e102d569e08547bc9b8dfd88f9245332.jpg)
 
 We live in (undoubtedly) [interesting times](https://en.wikipedia.org/wiki/May_you_live_in_interesting_times). The so-called “Future of Work” went from being a buzzword in HR conferences to actively affecting the livelihood of millions of people. Last year, the [Great Resignation](https://en.wikipedia.org/wiki/Great_Resignation) saw employees leaving their jobs in record numbers after almost two years of working from their dinner tables. This year, a looming financial crisis caused even well-funded companies to internally collapse, while others had to resort to mass layoffs to “weather the storm”.
 

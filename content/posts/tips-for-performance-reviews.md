@@ -4,10 +4,10 @@ date: "2020-12-06"
 topic: "feedback"
 excerpt: "Communicate effectively your performance reviews with continuous feedback, avoiding recency bias, and gathering 360 feedback."
 seoDescription: "Communicate effectively your performance reviews with continuous feedback, avoiding recency bias, and gathering 360 feedback."
-cover: "https://static.wixstatic.com/media/048247_4fd5e195725b4c7fadecdee45b024228~mv2.jpg"
+cover: "/assets/posts/048247_4fd5e195725b4c7fadecdee45b024228.jpg"
 ---
 
-![Man tying boy's shoe laces in a football field](https://static.wixstatic.com/media/048247_4fd5e195725b4c7fadecdee45b024228~mv2.jpg)
+![Man tying boy's shoe laces in a football field](/assets/posts/048247_4fd5e195725b4c7fadecdee45b024228.jpg)
 
 In the [previous Leading by Design issue](https://sugarenia.com/blog/brace-yourselves-performance-reviews-are-coming/), we’ve talked about how annual performance evaluations tend to be a waste of time for everyone involved. You could replace formulaic, unproductive end-of-year reviews with a more forward-thinking performance management method like [CPM (Continuous Performance Management)](https://www.clearreview.com/resources/guides/continuous-performance-management/).
 

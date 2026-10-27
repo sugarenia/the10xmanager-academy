@@ -4,10 +4,10 @@ date: "2022-05-05"
 topic: "remote"
 excerpt: "Support your hybrid team with clear communication, set in-office hours, and adjust productivity expectations to enhance engagement."
 seoDescription: "Support your hybrid team with clear communication, set in-office hours, and adjust productivity expectations to enhance engagement."
-cover: "https://static.wixstatic.com/media/048247_037a9a446ac74b2c9074e998c7fa041f~mv2.jpg"
+cover: "/assets/posts/048247_037a9a446ac74b2c9074e998c7fa041f.jpg"
 ---
 
-![Bunch of tomatoes](https://static.wixstatic.com/media/048247_037a9a446ac74b2c9074e998c7fa041f~mv2.jpg)
+![Bunch of tomatoes](/assets/posts/048247_037a9a446ac74b2c9074e998c7fa041f.jpg)
 
 The West has largely moved on from Covid, it seems. After more than two years of rolling lockdowns, social distancing and controversial face coverings, most businesses rush to ring the bell: the great return to the office is underway.
 

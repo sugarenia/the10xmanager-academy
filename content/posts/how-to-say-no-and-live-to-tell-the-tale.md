@@ -4,10 +4,10 @@ date: "2022-07-27"
 topic: "communication"
 excerpt: "Prioritize effectively, avoid overcommitment, and learn to say no constructively to prevent burnout and maintain trust within your team."
 seoDescription: "Prioritize effectively, avoid overcommitment, and learn to say no constructively to prevent burnout and maintain trust within your team."
-cover: "https://static.wixstatic.com/media/048247_cfe0561e38af443a9bb96ab097c385ca~mv2.jpg"
+cover: "/assets/posts/048247_cfe0561e38af443a9bb96ab097c385ca.jpg"
 ---
 
-![Nope Hand Lettering On Wood and Glass](https://static.wixstatic.com/media/048247_cfe0561e38af443a9bb96ab097c385ca~mv2.jpg)
+![Nope Hand Lettering On Wood and Glass](/assets/posts/048247_cfe0561e38af443a9bb96ab097c385ca.jpg)
 
 Prioritising work is an art and a science. Whether you’re an individual contributor or a people manager, most career advice advocates for honing your prioritisation skills. As a leader, you should be prepared to prioritise not only your work (“what’s the best way I can help my team right now?”) but your team’s work as well (“what should we work on first?”). You will also have to communicate these priorities again and again during 1:1s and planning meetings.
 

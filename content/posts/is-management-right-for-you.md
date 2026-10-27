@@ -4,10 +4,10 @@ date: "2020-05-18"
 topic: "new-managers"
 excerpt: "Questions to ask yourself before you move from individual contributor to manager."
 seoDescription: "Discover if management is the right fit for you with these insightful questions and practical tips on how to become a successful manager."
-cover: "https://static.wixstatic.com/media/048247_2903f6acda38429ba9474132f33c1508~mv2.jpg"
+cover: "/assets/posts/048247_2903f6acda38429ba9474132f33c1508.jpg"
 ---
 
-![Multiple "one way" road signs pointing to different directions](https://static.wixstatic.com/media/048247_2903f6acda38429ba9474132f33c1508~mv2.jpg)
+![Multiple "one way" road signs pointing to different directions](/assets/posts/048247_2903f6acda38429ba9474132f33c1508.jpg)
 
 More often than not, switching from being an individual contributor to being a manager is considered the next step in [knowledge workers](https://en.wikipedia.org/wiki/Knowledge_worker)’ careers. Becoming a manager shouldn’t be only about adding two extra lines in your CV, or getting more money (even though you should celebrate both).
 
