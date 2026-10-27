@@ -129,19 +129,25 @@ function postPage(p) {
 }
 
 // ---- archive
-function archive() {
+// "Start here" cards: the archive's opening row, reused on the thank-you pages.
+function startHere(label = "// start here", pad = "0 24px 88px") {
   const bySlug = new Map(posts.map((p) => [p.slug, p]));
   let html = `<!-- START HERE -->
-  <section style="max-width: 1200px; margin: 0 auto; padding: 0 24px 88px">
-<h2 style="margin: 0 0 20px; ${MONO}; font-size: 14px; font-weight: 500; letter-spacing: 0.02em; color: #8B93A1">// start here</h2>
+  <section style="max-width: 1200px; margin: 0 auto; padding: ${pad}">
+<h2 style="margin: 0 0 20px; ${MONO}; font-size: 14px; font-weight: 500; letter-spacing: 0.02em; color: #8B93A1">${label}</h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">\n`;
   START_HERE.map(([slug, blurb]) => [bySlug.get(slug), blurb])
     .filter(([p]) => p)
     .forEach(([p, blurb], i) => {
       html += `<a href="${postUrl(p)}" class="start-card" style="display: flex; flex-direction: column; border-radius: 14px; background: #161A20; border: 1px solid #222731; overflow: hidden; color: inherit"><div aria-hidden="true" style="position: relative; height: 128px; background: #12161C; border-bottom: 1px solid #222731; overflow: hidden">${SHAPES[i % 3]}<span style="position: absolute; left: 24px; bottom: 16px; ${MONO}; font-size: 40px; font-weight: 500; letter-spacing: -0.05em; color: #F3F5F8">0${i + 1}</span></div><div style="flex: 1; display: flex; flex-direction: column; padding: 24px"><span style="${MONO}; font-size: 13px; font-weight: 500; color: ${p.topic.color}">#${esc(p.topic.tag)}</span><h3 class="start-title" style="margin: 10px 0 0; ${MONO}; font-size: 21px; font-weight: 500; line-height: 1.3; letter-spacing: -0.03em; color: #F3F5F8; transition: color .2s ease">${esc(p.title)}</h3><p style="margin: 12px 0 20px; font-size: 15px; color: #AEB5C1">${esc(blurb || p.excerpt)}</p><span style="margin-top: auto; ${MONO}; font-size: 13px; color: #6E7684">${p.minutes} min read →</span></div></a>\n`;
     });
-  html += `</div>
-  </section>
+  return html + `</div>
+  </section>`;
+}
+
+function archive() {
+  let html = startHere();
+  html += `
   <!-- ALL WRITING -->
   <section style="max-width: 1200px; margin: 0 auto; padding: 0 24px 96px">
 <h2 style="margin: 0; ${MONO}; font-weight: 500; font-size: clamp(26px, 3vw, 36px); line-height: 1.3; letter-spacing: -0.04em; color: #F3F5F8">Browse by topic</h2>
@@ -163,16 +169,20 @@ function archive() {
   return html + `</div>\n  </section>`;
 }
 
-// A simple message page in the archive's design (404, form thanks).
+// A message page in the archive's design (404, form thank-yous), optionally followed by more.
 const blogTpl = tpl("blog.html");
-const messagePage = (title, heading, text) =>
-  blogTpl
+const messagePage = (title, heading, text, after = "", { newsletter = true } = {}) => {
+  let html = blogTpl
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(title)}</title>\n<meta name="robots" content="noindex">`)
     .replace(/<!-- HERO -->[\s\S]*?%%SECTIONS%%/, `<!-- MESSAGE -->
-  <section style="max-width: 768px; margin: 0 auto; padding: 120px 24px 120px">
+  <section style="max-width: 1200px; margin: 0 auto; padding: 120px 24px ${after ? "64px" : "120px"}">
 <h1 style="margin: 0; ${MONO}; font-weight: 500; font-size: clamp(32px, 4vw, 50px); line-height: 1.16; letter-spacing: -0.05em; color: #F3F5F8">${heading}</h1>
-<p style="margin: 24px 0 0; font-size: 20px; line-height: 1.55; color: #AEB5C1">${text}</p>
-  </section>`);
+<p style="margin: 24px 0 0; max-width: 680px; font-size: 20px; line-height: 1.55; color: #AEB5C1">${text}</p>
+  </section>
+${after}`);
+  if (!newsletter) html = html.replace(/\s*<!-- NEWSLETTER -->[\s\S]*?<\/section>/, "");
+  return html;
+};
 
 // ---- RSS (same address as the old Wix feed) and sitemap
 const xml = (s) => esc(s).replace(/'/g, "&apos;");
@@ -207,7 +217,9 @@ writeFileSync(join(OUT, "index.html"), tpl("home.html"));
 writeFileSync(join(OUT, "blog.html"), blogTpl.replace("%%SECTIONS%%", archive()));
 for (const p of posts) writeFileSync(join(OUT, "post", `${p.slug}.html`), postPage(p));
 writeFileSync(join(OUT, "404.html"), messagePage("Page not found · The 10x Manager Academy", "This page doesn't exist.", 'It may have moved. Try <a href="/blog">all writing</a> or the <a href="/">homepage</a>.'));
-writeFileSync(join(OUT, "thanks.html"), messagePage("Thanks · The 10x Manager Academy", "Thanks, got it.", 'I\'ll get back to you soon. In the meantime, <a href="/blog">read something</a>.'));
+const CALL = "https://calendar.app.google/crG9ExWinyMXmka69";
+writeFileSync(join(OUT, "thanks.html"), messagePage("Thanks · The 10x Manager Academy", "Thanks, I've got your note.", `I read every message myself and will reply by email. Want to talk sooner? <a href="${CALL}" target="_blank" rel="noopener">Book a free scoping call</a>.`, startHere("// while you wait", "0 24px 120px")));
+writeFileSync(join(OUT, "subscribed.html"), messagePage("You're subscribed · The 10x Manager Academy", "You're on the list.", "The next issue lands in your inbox. Until then, this is where most readers start:", startHere("// start here", "0 24px 120px"), { newsletter: false }));
 writeFileSync(join(OUT, "blog-feed.xml"), rss);
 writeFileSync(join(OUT, "sitemap.xml"), sitemap);
 writeFileSync(join(OUT, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
