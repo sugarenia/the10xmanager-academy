@@ -120,7 +120,7 @@ const postBody = tpl("post-body.html");
 
 function postPage(p) {
   const related = [...posts.filter((x) => x !== p && x.topic.tag === p.topic.tag), ...posts.filter((x) => x !== p && x.topic.tag !== p.topic.tag)].slice(0, 3);
-  const meta = headMeta({ title: p.seoTitle || p.title, description: p.seoDescription || p.excerpt || "", image: p.cover, url: SITE + postUrl(p) });
+  const meta = headMeta({ title: p.seoTitle || p.title, description: p.seoDescription || p.excerpt || "", image: p.cover && p.cover.startsWith("/") ? SITE + p.cover : p.cover, url: SITE + postUrl(p) });
   const body = postBody
     .replace("%%HEADER%%", () => header(p))
     .replace("%%BODY%%", () => md.parse(p.body))
