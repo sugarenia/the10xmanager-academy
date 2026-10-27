@@ -1,0 +1,9 @@
+# Old Wix pages → the new site
+/bootcamp            /#managers   301
+/coaching            /#managers   301
+/coaching/*          /#managers   301
+/training            /#teams      301
+/workshops           /#teams      301
+/newsletter          /#newsletter 301
+/blog/categories/*   /blog        301
+/blog/*              /post/:splat 301
