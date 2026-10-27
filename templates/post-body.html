@@ -34,6 +34,7 @@
           </g>
         </svg>
       </a>
+      <div class="theme-switch" role="group" aria-label="Colour theme"><button type="button" class="ts-btn" data-theme-value="light" aria-pressed="false" aria-label="Light theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg></button><button type="button" class="ts-btn" data-theme-value="dark" aria-pressed="true" aria-label="Dark theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"></path></svg></button></div>
       <input type="checkbox" id="post-nav-toggle" class="nav-toggle" aria-label="Open menu">
       <label for="post-nav-toggle" class="burger" aria-hidden="true"><span></span><span></span><span></span></label>
       <div class="nav-links" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; font-size: 15px; font-weight: 500">
@@ -101,3 +102,4 @@
     </div>
   </footer>
 </div>
+<script>(function(){var d=document.documentElement,m=document.querySelector('meta[name="color-scheme"]');function set(t,save){if(t==="light")d.setAttribute("data-theme","light");else d.removeAttribute("data-theme");if(m)m.setAttribute("content",t);document.querySelectorAll(".ts-btn").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.themeValue===t))});if(save){try{localStorage.setItem("theme",t)}catch(e){}}}set(d.getAttribute("data-theme")==="light"?"light":"dark",false);document.querySelectorAll(".ts-btn").forEach(function(b){b.addEventListener("click",function(){set(b.dataset.themeValue,true)})})})();</script>

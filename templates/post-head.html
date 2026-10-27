@@ -1,5 +1,6 @@
 
 <meta charset="utf-8">
+<script>(function(){var d=document.documentElement;d.classList.add("js");try{if(localStorage.getItem("theme")==="light")d.setAttribute("data-theme","light")}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 %%HEADMETA%%
 <meta name="color-scheme" content="dark">
@@ -66,5 +67,14 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #B7D2
 .prose table{width:100%;border-collapse:collapse;font-size:16px;margin:0 0 24px;display:block;overflow-x:auto}
 .prose td,.prose th{padding:16px 18px;border:1px solid #2A303A;background:#161A20;vertical-align:middle;text-align:left}
 .prose .embed{margin:32px 0}
+.theme-switch{display:none;order:2;gap:2px;padding:2px;border:1px solid #2A313B;border-radius:999px;background:#161A20}
+html.js .theme-switch{display:inline-flex}
+.nav-links{order:1;margin-left:auto}
+.ts-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border:0;border-radius:999px;background:transparent;color:#8B93A1;cursor:pointer;transition:background-color .2s ease,color .2s ease}
+.ts-btn:hover{color:#F3F5F8}
+.ts-btn[aria-pressed="true"]{background:#F3F5F8;color:#0D1117}
+html[data-theme="light"] .ts-btn[aria-pressed="true"]{background:#15171C;color:#F5F7FA}
+html[data-theme="light"] .burger span{background:#15171C}
+@media (max-width: 640px){.theme-switch{order:0;margin-left:auto}.nav-links{order:3}nav{column-gap:10px !important}.logo-link svg{width:176px !important}}
 </style>
 <style>html{scroll-behavior:smooth;background:#0D1117}</style>

@@ -25,7 +25,8 @@ Your post, in Markdown. ## for section headings, **bold**, *italic*, [links](htt
 
 ## Other files
 
-- `templates/` — the page designs (homepage is `templates/home.html`)
+- `templates/` — the page designs, written in the dark palette (homepage is `templates/home.html`)
+- `theme.mjs` — the light theme: each dark colour and its light counterpart
 - `static/_redirects` — old addresses → new ones
 - Forms (newsletter, contact) arrive in Netlify → Forms
 
