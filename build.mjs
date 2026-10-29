@@ -4,6 +4,7 @@ import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync, cpSync, ex
 import { join } from "node:path";
 import { Marked } from "marked";
 import { themed } from "./theme.mjs";
+import { postCard } from "./og-cards.mjs";
 
 const SITE = "https://www.the10xmanager.academy";
 const ROOT = new URL(".", import.meta.url).pathname;
@@ -112,7 +113,7 @@ function headMeta({ title, description, image, url, type = "article" }) {
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${url}">
-<meta property="og:type" content="${type}">${image ? `\n<meta property="og:image" content="${esc(image)}">` : ""}
+<meta property="og:type" content="${type}">${image ? `\n<meta property="og:image" content="${esc(image)}">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">` : ""}
 <meta name="twitter:card" content="${image ? "summary_large_image" : "summary"}">`;
 }
 
@@ -121,7 +122,7 @@ const postBody = tpl("post-body.html");
 
 function postPage(p) {
   const related = [...posts.filter((x) => x !== p && x.topic.tag === p.topic.tag), ...posts.filter((x) => x !== p && x.topic.tag !== p.topic.tag)].slice(0, 3);
-  const meta = headMeta({ title: p.seoTitle || p.title, description: p.seoDescription || p.excerpt || "", image: !p.cover ? SITE + "/assets/share-blog.png" : p.cover.startsWith("/") ? SITE + p.cover : p.cover, url: SITE + postUrl(p) });
+  const meta = headMeta({ title: p.seoTitle || p.title, description: p.seoDescription || p.excerpt || "", image: `${SITE}/assets/og/${p.slug}.png`, url: SITE + postUrl(p) });
   const body = postBody
     .replace("%%HEADER%%", () => header(p))
     .replace("%%BODY%%", () => md.parse(p.body))
@@ -217,6 +218,9 @@ if (existsSync(join(ROOT, "static"))) cpSync(join(ROOT, "static"), OUT, { recurs
 writeFileSync(join(OUT, "index.html"), themed(tpl("home.html")));
 writeFileSync(join(OUT, "blog.html"), themed(blogTpl.replace("%%SECTIONS%%", archive())));
 for (const p of posts) writeFileSync(join(OUT, "post", `${p.slug}.html`), themed(postPage(p)));
+// One share card per post (logo, #topic, title, read time).
+mkdirSync(join(OUT, "assets", "og"), { recursive: true });
+for (const p of posts) writeFileSync(join(OUT, "assets", "og", `${p.slug}.png`), await postCard({ title: p.title, tag: p.topic.tag, color: p.topic.color, minutes: p.minutes }));
 writeFileSync(join(OUT, "404.html"), themed(messagePage("Page not found · The 10x Manager Academy", "This page doesn't exist.", 'It may have moved. Try <a href="/blog">all writing</a> or the <a href="/">homepage</a>.')));
 const CALL = "https://calendar.app.google/crG9ExWinyMXmka69";
 writeFileSync(join(OUT, "thanks.html"), themed(messagePage("Thanks · The 10x Manager Academy", "Thanks, I've got your note.", `I read every message myself and will reply by email. Want to talk sooner? <a href="${CALL}" target="_blank" rel="noopener">Book a free scoping call</a>.`, startHere("// while you wait", "0 24px 120px"))));
