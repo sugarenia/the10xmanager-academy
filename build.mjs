@@ -186,6 +186,16 @@ ${after}`);
   return html;
 };
 
+// ---- privacy policy (content/privacy.md), styled inline to match the message pages
+const privacyBody = md
+  .parse(readFileSync(join(ROOT, "content", "privacy.md"), "utf8"))
+  .replace(/<h2>/g, `<h2 style="margin: 48px 0 14px; ${MONO}; font-weight: 500; font-size: 24px; line-height: 1.3; letter-spacing: -0.04em; color: #F3F5F8">`)
+  .replace(/<p>/g, '<p style="margin: 0 0 18px">')
+  .replace(/<strong>/g, '<strong style="font-weight: 600; color: #F3F5F8">');
+const privacyPage = () =>
+  messagePage("Privacy policy · The 10x Manager Academy", "Privacy policy", "What this site collects, why, and what you can ask me to do with it.", `<section style="max-width: 1200px; margin: 0 auto; padding: 0 24px 120px"><div style="max-width: 680px; font-size: 17px; line-height: 1.7; color: #AEB5C1">${privacyBody}</div></section>`)
+    .replace('<meta name="robots" content="noindex">', `<meta name="description" content="How The 10x Manager Academy handles your data.">\n<link rel="canonical" href="${SITE}/privacy">`);
+
 // ---- RSS (same address as the old Wix feed) and sitemap
 const xml = (s) => esc(s).replace(/'/g, "&apos;");
 const rss = `<?xml version="1.0" encoding="UTF-8"?>
@@ -206,6 +216,7 @@ ${posts
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>${SITE}/</loc></url>
+<url><loc>${SITE}/privacy</loc></url>
 <url><loc>${SITE}/blog</loc><lastmod>${posts[0]?.date ?? ""}</lastmod></url>
 ${posts.map((p) => `<url><loc>${SITE}${postUrl(p)}</loc><lastmod>${p.date}</lastmod></url>`).join("\n")}
 </urlset>
@@ -221,6 +232,7 @@ for (const p of posts) writeFileSync(join(OUT, "post", `${p.slug}.html`), themed
 // One share card per post (logo, #topic, title, read time).
 mkdirSync(join(OUT, "assets", "og"), { recursive: true });
 for (const p of posts) writeFileSync(join(OUT, "assets", "og", `${p.slug}.png`), await postCard({ title: p.title, tag: p.topic.tag, color: p.topic.color, minutes: p.minutes }));
+writeFileSync(join(OUT, "privacy.html"), themed(privacyPage()));
 writeFileSync(join(OUT, "404.html"), themed(messagePage("Page not found · The 10x Manager Academy", "This page doesn't exist.", 'It may have moved. Try <a href="/blog">all writing</a> or the <a href="/">homepage</a>.')));
 const CALL = "https://calendar.app.google/crG9ExWinyMXmka69";
 writeFileSync(join(OUT, "thanks.html"), themed(messagePage("Thanks · The 10x Manager Academy", "Thanks, I've got your note.", `I read every message myself and will reply by email. Want to talk sooner? <a href="${CALL}" target="_blank" rel="noopener">Book a free scoping call</a>.`, startHere("// while you wait", "0 24px 120px"))));
