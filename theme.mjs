@@ -55,5 +55,7 @@ export function themed(html) {
   const light = [...used].map(([n, [, l]]) => `${n}:${l}`).join(";");
   const css = `<style>:root{${dark}}html[data-theme="light"]{${light};color-scheme:light}
 .tag-pill{background:#1F2430;color:var(--pill)}html[data-theme="light"] .tag-pill{background:var(--pill);color:#0D1117}</style>\n`;
-  return html.replace("</head>", css + "</head>");
+  // Cloudflare Web Analytics: cookie-free page views, on every page.
+  const beacon = `<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "af10d0dfdc1e4b45947a60502c18cde3"}'></script>`;
+  return html.replace("</head>", css + "</head>").replace("</body>", beacon + "\n</body>");
 }

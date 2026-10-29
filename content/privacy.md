@@ -8,15 +8,17 @@ This site is run by Zaharenia Atzitzikaki, trading as The 10x Manager Academy, b
 
 **Booking a call.** If you book through my calendar link, Google Calendar receives the details you enter, and I use them only to hold the call.
 
+**Visitor statistics.** Cloudflare Web Analytics counts page views, referring sites and countries so I can see what people read. It sets no cookies and doesn't identify or follow you across sites.
+
 **Server logs.** Netlify keeps standard technical logs (such as IP address and browser) for security and to keep the site running. I don't use them to identify you.
 
 ## What I don't do
 
-No analytics, no advertising, no tracking cookies, and I never sell or share your data. The site saves your light or dark theme choice in your browser; it never leaves your device.
+No advertising, no tracking cookies, and I never sell or share your data. The site saves your light or dark theme choice in your browser; it never leaves your device.
 
 ## Where your data goes
 
-Netlify, beehiiv and Google are based in the US. They transfer data under the EU's Standard Contractual Clauses or the EU–US Data Privacy Framework.
+Netlify, beehiiv, Google and Cloudflare are based in the US. They transfer data under the EU's Standard Contractual Clauses or the EU–US Data Privacy Framework.
 
 ## Your rights
 
