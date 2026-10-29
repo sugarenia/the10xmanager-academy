@@ -2,6 +2,7 @@
 // 404, thanks, sitemap and the RSS feed. Netlify runs this on every push (see netlify.toml).
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync, cpSync, existsSync } from "node:fs";
 import { join } from "node:path";
+import { createHash } from "node:crypto";
 import { Marked } from "marked";
 import { themed } from "./theme.mjs";
 import { postCard } from "./og-cards.mjs";
@@ -122,7 +123,7 @@ const postBody = tpl("post-body.html");
 
 function postPage(p) {
   const related = [...posts.filter((x) => x !== p && x.topic.tag === p.topic.tag), ...posts.filter((x) => x !== p && x.topic.tag !== p.topic.tag)].slice(0, 3);
-  const meta = headMeta({ title: p.seoTitle || p.title, description: p.seoDescription || p.excerpt || "", image: `${SITE}/assets/og/${p.slug}.png`, url: SITE + postUrl(p) });
+  const meta = headMeta({ title: p.seoTitle || p.title, description: p.seoDescription || p.excerpt || "", image: `${SITE}/assets/og/${p.slug}.png?v=${CARD_VERSION[p.slug]}`, url: SITE + postUrl(p) });
   const body = postBody
     .replace("%%HEADER%%", () => header(p))
     .replace("%%BODY%%", () => md.parse(p.body))
@@ -172,7 +173,13 @@ function archive() {
 }
 
 // A message page in the archive's design (404, form thank-yous), optionally followed by more.
-const blogTpl = tpl("blog.html");
+// Share images get ?v=<content hash> so LinkedIn and others refetch them whenever they change
+// (they cache images by URL, and the files keep the same name).
+const version = (buf) => createHash("sha1").update(buf).digest("hex").slice(0, 8);
+const CARD_VERSION = {};
+const bustShareImages = (html) =>
+  html.replace(/(\/assets\/(share-[a-z]+\.png))"/g, (m, path, file) => `${path}?v=${version(readFileSync(join(ROOT, "static", "assets", file)))}"`);
+const blogTpl = bustShareImages(tpl("blog.html"));
 const messagePage = (title, heading, text, after = "", { newsletter = true } = {}) => {
   let html = blogTpl
     .replace(/\n<link rel="canonical"[^>]*>\n<meta property="og:url"[^>]*>/, "")
@@ -262,12 +269,16 @@ ${posts.map((p) => `<url><loc>${SITE}${postUrl(p)}</loc><lastmod>${p.date}</last
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(join(OUT, "post"), { recursive: true });
 if (existsSync(join(ROOT, "static"))) cpSync(join(ROOT, "static"), OUT, { recursive: true });
-writeFileSync(join(OUT, "index.html"), themed(tpl("home.html")));
-writeFileSync(join(OUT, "blog.html"), themed(blogTpl.replace("%%SECTIONS%%", archive())));
-for (const p of posts) writeFileSync(join(OUT, "post", `${p.slug}.html`), themed(postPage(p)));
 // One share card per post (logo, #topic, title, read time).
 mkdirSync(join(OUT, "assets", "og"), { recursive: true });
-for (const p of posts) writeFileSync(join(OUT, "assets", "og", `${p.slug}.png`), await postCard({ title: p.title, tag: p.topic.tag, color: p.topic.color, minutes: p.minutes }));
+for (const p of posts) {
+  const png = await postCard({ title: p.title, tag: p.topic.tag, color: p.topic.color, minutes: p.minutes });
+  writeFileSync(join(OUT, "assets", "og", `${p.slug}.png`), png);
+  CARD_VERSION[p.slug] = version(png);
+}
+writeFileSync(join(OUT, "index.html"), themed(bustShareImages(tpl("home.html"))));
+writeFileSync(join(OUT, "blog.html"), themed(blogTpl.replace("%%SECTIONS%%", archive())));
+for (const p of posts) writeFileSync(join(OUT, "post", `${p.slug}.html`), themed(postPage(p)));
 writeFileSync(join(OUT, "privacy.html"), themed(privacyPage()));
 writeFileSync(join(OUT, "speaking.html"), themed(speakingPage()));
 writeFileSync(join(OUT, "404.html"), themed(messagePage("Page not found · The 10x Manager Academy", "This page doesn't exist.", 'It may have moved. Try <a href="/blog">all writing</a> or the <a href="/">homepage</a>.')));
