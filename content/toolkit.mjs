@@ -24,7 +24,7 @@ export const PROMPTS = [
       "Here's what I have: [notes / PRs / tickets, 2 min to grab]",
       "",
       "Give me:",
-      "1. Two specific strengths, tied to an example",
+      "1. Up to two specific strengths, tied to an example",
       "2. One growth area, framed as a behaviour",
       "3. One open question for the 1:1",
     ],
@@ -47,7 +47,7 @@ export const PROMPTS = [
       "2. A flag: green / yellow / red, and why",
       "3. A ranked list: who I talk to first, and why",
     ],
-    guards: ["Don't manufacture differences that aren't there.", "Don't infer a mood from a commit log."],
+    guards: ["Don't manufacture differences that aren't there.", "Don't infer a mood from a commit log.", "If I gave you nothing for someone, say \"no data\" and leave them out of the ranking."],
     watch: [
       "Models will confidently read a mood into thin data: a quiet week, a few late commits. Check flags against what you actually know.",
       "The ranked list is a prompt for your judgment. If it feels wrong, trust yourself.",
@@ -84,7 +84,7 @@ export const PROMPTS = [
       "",
       "Give me:",
       "1. The case in three sentences",
-      "2. Evidence against each expectation, strongest first",
+      "2. Evidence for each expectation, strongest first, gaps marked as gaps",
       "3. The toughest objection a calibration committee will raise, and an honest answer",
     ],
     guards: ["Don't inflate scope or impact.", "If the evidence doesn't support the next level yet, say so."],
@@ -106,7 +106,7 @@ export const PROMPTS = [
       "2. Three reactions to expect, and what might be behind each",
       "3. What a good outcome looks like by the end of the meeting",
     ],
-    guards: ["No script. Structure only, I'll find my own words.", "Point out where I'm softening the message."],
+    guards: ["No script beyond that first sentence. Structure only, I'll find my own words.", "Point out where I'm softening the message."],
     watch: [
       "This is preparation. The conversation itself is the part that stays yours, so close the laptop before you walk in.",
       "The model doesn't know this person. Treat the expected reactions as possibilities and stay curious about the real one.",
@@ -126,7 +126,7 @@ export const PROMPTS = [
       "2. Where interviewers disagree, and on what exactly",
       "3. Three questions the debrief needs to settle",
     ],
-    guards: ["Keep observations separate from opinions.", "Don't give me a hire / no-hire verdict."],
+    guards: ["Keep observations separate from opinions.", "Don't give me a hire / no-hire verdict.", "Flag any note about something unrelated to the job (age, family, accent, looks) and leave it out of the evidence."],
     watch: [
       "\"Not assessed\" is usually the most useful column. Gaps are cheaper to fix with one more conversation than with a bad hire.",
       "Strip names and anything identifying before you paste, and check your company's policy on candidate data first.",
@@ -145,7 +145,7 @@ export const PROMPTS = [
       "2. One observable milestone each for days 30, 60 and 90",
       "3. Where a new hire is most likely to get stuck, based on what I gave you",
     ],
-    guards: ["Keep week one light on reading and heavy on people.", "Mark anything you assumed."],
+    guards: ["Keep week one light on reading and heavy on people.", "Use roles, not names, for anyone I didn't name.", "Mark anything you assumed."],
     watch: [
       "Generated plans are always overloaded. Cut a third before you share it.",
       "Go through the plan with your new hire in week one and let them edit it. It becomes their plan, which is the point.",
