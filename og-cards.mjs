@@ -1,4 +1,4 @@
-// Share cards (1200×630 PNG) for each post: logo, #topic in its colour, title, read time and author.
+// Share cards (1200×630 PNG) for each post (and the toolkit page, via `meta`): logo, #topic in its colour, title, read time and author.
 // Rendered at build time with satori (layout → SVG) and resvg (SVG → PNG); no browser needed.
 import { readFileSync } from "node:fs";
 import { createRequire } from "node:module";
@@ -20,7 +20,7 @@ const LOGO = "data:image/svg+xml;base64," + readFileSync(new URL("./static/asset
 // Minimal element helper for satori's React-like tree.
 const h = (type, style, ...children) => ({ type, props: { style, children: children.flat().filter((c) => c !== null && c !== undefined) } });
 
-export async function postCard({ title, tag, color, minutes, author = "Zaharenia Atzitzikaki" }) {
+export async function postCard({ title, tag, color, minutes, meta, author = "Zaharenia Atzitzikaki" }) {
   const size = title.length > 70 ? 52 : title.length > 50 ? 58 : 62;
   const tree = h(
     "div",
@@ -38,7 +38,7 @@ export async function postCard({ title, tag, color, minutes, author = "Zaharenia
       h("div", { display: "flex", fontSize: 26, color, marginBottom: 22 }, `#${tag}`),
       h("div", { display: "flex", fontSize: size, lineHeight: 1.18, letterSpacing: "-0.045em", color: "#F3F5F8" }, title),
     ),
-    h("div", { display: "flex", fontFamily: "DM Sans", fontSize: 24, color: "#AEB5C1" }, `${minutes} min read  ·  ${author}`),
+    h("div", { display: "flex", fontFamily: "DM Sans", fontSize: 24, color: "#AEB5C1" }, `${meta ?? `${minutes} min read`}  ·  ${author}`),
   );
   const svg = await satori(tree, { width: 1200, height: 630, fonts: FONTS });
   return new Resvg(svg, { fitTo: { mode: "width", value: 2400 } }).render().asPng();

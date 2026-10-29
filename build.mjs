@@ -6,6 +6,7 @@ import { createHash } from "node:crypto";
 import { Marked } from "marked";
 import { themed } from "./theme.mjs";
 import { postCard } from "./og-cards.mjs";
+import { PROMPTS, FREE, word, TOOLKIT_CSS, TOOLKIT_JS, toolkitHero, toolkitRule, toolkitPrompts, toolkitLocked, toolkitGet, toolkitBeforeYouPaste, toolkitClose, toolkitUnlocked } from "./toolkit.mjs";
 
 const SITE = "https://the10xmanager.academy";
 const ROOT = new URL(".", import.meta.url).pathname;
@@ -238,6 +239,47 @@ const speakingPage = () =>
     )}</section>`,
   ).replace('<meta name="robots" content="noindex">', `<meta name="description" content="Talks by Zaharenia Atzitzikaki on leadership, management and design.">\n<link rel="canonical" href="${SITE}/speaking">`);
 
+// ---- AI toolkit (newsletter incentive): /toolkit previews it, /toolkit-full is the whole kit,
+// linked from /confirmed after someone confirms their subscription. Prompts: content/toolkit.mjs.
+const TOOLKIT_DESC = `Seven copy-ready AI prompts for engineering managers: feedback, team pulse, performance reviews, promotion cases, hard conversations, hiring and onboarding.`;
+function toolkitPage({ title, path, index, newsletterHref, hero, sections }) {
+  const card = `${SITE}/assets/og/toolkit.png?v=${CARD_VERSION.toolkit}`;
+  return messagePage(title, "", "", sections, { newsletter: false })
+    .replace(/<!-- MESSAGE -->[\s\S]*?<\/section>/, () => hero)
+    .replace('<meta name="robots" content="noindex">', index ? `<meta name="description" content="${esc(TOOLKIT_DESC)}">\n<link rel="canonical" href="${SITE}${path}">\n<meta property="og:url" content="${SITE}${path}">` : '<meta name="robots" content="noindex">')
+    .replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${esc(title)}">`)
+    .replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${esc(TOOLKIT_DESC)}">`)
+    .replace(/<meta property="og:image" content="[^"]*">/, `<meta property="og:image" content="${card}">`)
+    .replace(/href="#newsletter"/g, `href="${newsletterHref}"`)
+    .replace("</head>", TOOLKIT_CSS + "\n</head>")
+    .replace("</body>", TOOLKIT_JS + "\n</body>");
+}
+const toolkitPreview = () =>
+  toolkitPage({
+    title: "The AI toolkit for engineering managers · The 10x Manager Academy",
+    path: "/toolkit",
+    index: true,
+    newsletterHref: "#get",
+    hero: toolkitHero('AI prompts for the parts of the job that were <mark class="hl">never the job.</mark>', `${word(PROMPTS.length)[0].toUpperCase() + word(PROMPTS.length).slice(1)} copy-ready prompts for the assembly work of managing: feedback, reviews, promotion cases, hard conversations, hiring and onboarding. The first ${word(FREE)} are below. Subscribe to the newsletter and you get all of them.`),
+    sections: [toolkitRule(), toolkitPrompts(), toolkitLocked(), toolkitGet(), toolkitBeforeYouPaste(), toolkitClose()].join("\n"),
+  });
+const toolkitFull = () =>
+  toolkitPage({
+    title: "Your AI toolkit · The 10x Manager Academy",
+    path: "/toolkit-full",
+    index: false,
+    newsletterHref: "/#newsletter",
+    hero: toolkitHero('Your toolkit: <mark class="hl">all seven prompts.</mark>', "Bookmark this page. Copy a prompt, fill in the brackets with whatever you can grab in two minutes, and check the output against what you actually know.", { cta: false }),
+    sections: [
+      toolkitRule(),
+      toolkitPrompts(PROMPTS.slice(0, FREE), "// every week"),
+      toolkitPrompts(PROMPTS.slice(FREE, 5), "// review season", FREE),
+      toolkitPrompts(PROMPTS.slice(5), "// hiring", 5),
+      toolkitBeforeYouPaste(),
+      toolkitClose(`<p style="margin: 24px 0 0; font-size: 17px; color: #AEB5C1">Used one of these? Reply to any newsletter issue and tell me how it went. I read every reply.</p>`),
+    ].join("\n"),
+  });
+
 // ---- RSS (same address as the old Wix feed) and sitemap
 const xml = (s) => esc(s).replace(/'/g, "&apos;");
 const rss = `<?xml version="1.0" encoding="UTF-8"?>
@@ -260,6 +302,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <url><loc>${SITE}/</loc></url>
 <url><loc>${SITE}/privacy</loc></url>
 <url><loc>${SITE}/speaking</loc></url>
+<url><loc>${SITE}/toolkit</loc></url>
 <url><loc>${SITE}/blog</loc><lastmod>${posts[0]?.date ?? ""}</lastmod></url>
 ${posts.map((p) => `<url><loc>${SITE}${postUrl(p)}</loc><lastmod>${p.date}</lastmod></url>`).join("\n")}
 </urlset>
@@ -276,18 +319,25 @@ for (const p of posts) {
   writeFileSync(join(OUT, "assets", "og", `${p.slug}.png`), png);
   CARD_VERSION[p.slug] = version(png);
 }
+{
+  const png = await postCard({ title: "AI prompts for the parts of the job that were never the job", tag: "toolkit", color: "#B7D26C", meta: "Seven copy-ready prompts for engineering managers" });
+  writeFileSync(join(OUT, "assets", "og", "toolkit.png"), png);
+  CARD_VERSION.toolkit = version(png);
+}
 writeFileSync(join(OUT, "index.html"), themed(bustShareImages(tpl("home.html"))));
 writeFileSync(join(OUT, "blog.html"), themed(blogTpl.replace("%%SECTIONS%%", archive())));
 for (const p of posts) writeFileSync(join(OUT, "post", `${p.slug}.html`), themed(postPage(p)));
 writeFileSync(join(OUT, "privacy.html"), themed(privacyPage()));
 writeFileSync(join(OUT, "speaking.html"), themed(speakingPage()));
+writeFileSync(join(OUT, "toolkit.html"), themed(toolkitPreview()));
+writeFileSync(join(OUT, "toolkit-full.html"), themed(toolkitFull()));
 writeFileSync(join(OUT, "404.html"), themed(messagePage("Page not found · The 10x Manager Academy", "This page doesn't exist.", 'It may have moved. Try <a href="/blog">all writing</a> or the <a href="/">homepage</a>.')));
 const CALL = "https://calendar.app.google/crG9ExWinyMXmka69";
 writeFileSync(join(OUT, "thanks.html"), themed(messagePage("Thanks · The 10x Manager Academy", "Thanks, I've got your note.", `I read every message myself and will reply by email. Want to talk sooner? <a href="${CALL}" target="_blank" rel="noopener">Book a free scoping call</a>.`, startHere("// while you wait", "0 24px 120px"))));
 // After the signup form: double opt-in means they still have to confirm by email.
-writeFileSync(join(OUT, "subscribed.html"), themed(messagePage("Check your inbox · The 10x Manager Academy", "One more step: check your inbox.", "I've sent you an email with a button to confirm your subscription. It can take a minute to arrive. If you can't find it, check your spam or promotions folder.", startHere("// while you wait", "0 24px 120px"), { newsletter: false })));
+writeFileSync(join(OUT, "subscribed.html"), themed(messagePage("Check your inbox · The 10x Manager Academy", "One more step: check your inbox.", "I've sent you an email with a button to confirm your subscription. Click it and you'll land on the full AI toolkit. The email can take a minute to arrive. If you can't find it, check your spam or promotions folder.", startHere("// while you wait", "0 24px 120px"), { newsletter: false })));
 // Where beehiiv sends people after they click the confirmation button (opt_in_redirect_url).
-writeFileSync(join(OUT, "confirmed.html"), themed(messagePage("You're subscribed · The 10x Manager Academy", "You're in.", "Your subscription is confirmed, and the next issue will land in your inbox. Until then, this is where most readers start:", startHere("// start here", "0 24px 120px"), { newsletter: false })));
+writeFileSync(join(OUT, "confirmed.html"), themed(messagePage("You're subscribed · The 10x Manager Academy", "You're in.", "Your subscription is confirmed, and the next issue will land in your inbox. Your toolkit is ready, and below it is where most readers start.", toolkitUnlocked() + "\n" + startHere("// start here", "0 24px 120px"), { newsletter: false })));
 writeFileSync(join(OUT, "subscribe-error.html"), themed(messagePage("Something went wrong · The 10x Manager Academy", "That didn't go through.", `Your email wasn't added. Please check it and <a href="/#newsletter">try again</a>, or email <a href="mailto:hello@the10xmanager.academy">hello@the10xmanager.academy</a> and I'll add you myself.`)));
 writeFileSync(join(OUT, "blog-feed.xml"), rss);
 writeFileSync(join(OUT, "sitemap.xml"), sitemap);
