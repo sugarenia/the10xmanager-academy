@@ -284,7 +284,10 @@ writeFileSync(join(OUT, "speaking.html"), themed(speakingPage()));
 writeFileSync(join(OUT, "404.html"), themed(messagePage("Page not found · The 10x Manager Academy", "This page doesn't exist.", 'It may have moved. Try <a href="/blog">all writing</a> or the <a href="/">homepage</a>.')));
 const CALL = "https://calendar.app.google/crG9ExWinyMXmka69";
 writeFileSync(join(OUT, "thanks.html"), themed(messagePage("Thanks · The 10x Manager Academy", "Thanks, I've got your note.", `I read every message myself and will reply by email. Want to talk sooner? <a href="${CALL}" target="_blank" rel="noopener">Book a free scoping call</a>.`, startHere("// while you wait", "0 24px 120px"))));
-writeFileSync(join(OUT, "subscribed.html"), themed(messagePage("You're subscribed · The 10x Manager Academy", "You're on the list.", "The next issue lands in your inbox. Until then, this is where most readers start:", startHere("// start here", "0 24px 120px"), { newsletter: false })));
+// After the signup form: double opt-in means they still have to confirm by email.
+writeFileSync(join(OUT, "subscribed.html"), themed(messagePage("Check your inbox · The 10x Manager Academy", "One more step: check your inbox.", "I've sent you an email with a button to confirm your subscription. It can take a minute to arrive. If you can't find it, check your spam or promotions folder.", startHere("// while you wait", "0 24px 120px"), { newsletter: false })));
+// Where beehiiv sends people after they click the confirmation button (opt_in_redirect_url).
+writeFileSync(join(OUT, "confirmed.html"), themed(messagePage("You're subscribed · The 10x Manager Academy", "You're in.", "Your subscription is confirmed, and the next issue will land in your inbox. Until then, this is where most readers start:", startHere("// start here", "0 24px 120px"), { newsletter: false })));
 writeFileSync(join(OUT, "subscribe-error.html"), themed(messagePage("Something went wrong · The 10x Manager Academy", "That didn't go through.", `Your email wasn't added. Please check it and <a href="/#newsletter">try again</a>, or email <a href="mailto:hello@the10xmanager.academy">hello@the10xmanager.academy</a> and I'll add you myself.`)));
 writeFileSync(join(OUT, "blog-feed.xml"), rss);
 writeFileSync(join(OUT, "sitemap.xml"), sitemap);
