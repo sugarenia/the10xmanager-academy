@@ -41,5 +41,5 @@ export async function postCard({ title, tag, color, minutes, author = "Zaharenia
     h("div", { display: "flex", fontFamily: "DM Sans", fontSize: 24, color: "#AEB5C1" }, `${minutes} min read  ·  ${author}`),
   );
   const svg = await satori(tree, { width: 1200, height: 630, fonts: FONTS });
-  return new Resvg(svg, { fitTo: { mode: "width", value: 1200 } }).render().asPng();
+  return new Resvg(svg, { fitTo: { mode: "width", value: 2400 } }).render().asPng();
 }

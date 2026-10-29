@@ -113,7 +113,7 @@ function headMeta({ title, description, image, url, type = "article" }) {
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${url}">
-<meta property="og:type" content="${type}">${image ? `\n<meta property="og:image" content="${esc(image)}">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">` : ""}
+<meta property="og:type" content="${type}">${image ? `\n<meta property="og:image" content="${esc(image)}">\n<meta property="og:image:width" content="2400">\n<meta property="og:image:height" content="1260">` : ""}
 <meta name="twitter:card" content="${image ? "summary_large_image" : "summary"}">`;
 }
 
