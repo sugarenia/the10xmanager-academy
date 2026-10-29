@@ -20,10 +20,15 @@ export default async (req) => {
     console.error("BEEHIIV_API_KEY is not set");
     return go(req, "/subscribe-error");
   }
+  // Where the form was: this site, or sugarenia.com (whose forms post here too).
   let page = "";
+  let origin = "https://the10xmanager.academy";
   try {
-    page = new URL(req.headers.get("referer") || "").pathname;
+    const ref = new URL(req.headers.get("referer") || "");
+    page = ref.pathname;
+    if (/(^|\.)sugarenia\.com$/.test(ref.hostname)) origin = "https://sugarenia.com";
   } catch {}
+  const source = new URL(origin).hostname;
   const res = await fetch(`https://api.beehiiv.com/v2/publications/${PUBLICATION}/subscriptions`, {
     method: "POST",
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json", Accept: "application/json" },
@@ -31,10 +36,10 @@ export default async (req) => {
       email,
       reactivate_existing: false,
       send_welcome_email: true,
-      utm_source: "the10xmanager.academy",
+      utm_source: source,
       utm_medium: "website",
       utm_content: page || undefined,
-      referring_site: "https://the10xmanager.academy" + page,
+      referring_site: origin + page,
     }),
   });
   if (!res.ok) {
