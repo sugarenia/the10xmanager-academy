@@ -45,7 +45,7 @@ Well, here’s the thing: [<u>There isn’t anything a manager hates more than 
 
 A brief message like “Hey, I made this. My reasoning is that. I am going in the right direction?” will do.
 
-> Are you a manager looking to upskill your junior team members? I offer tailored training programs designed to equip your Gen Z employees with the mindset they need to excel. [<u>Contact me today</u>](https://www.the10xmanager.academy/#comp-l7rids4s) for more information.
+> Are you a manager looking to upskill your junior team members? I offer tailored training programs designed to equip your Gen Z employees with the mindset they need to excel. [<u>Contact me today</u>](/#comp-l7rids4s) for more information.
 
 ## You Need Negative Feedback to Grow
 

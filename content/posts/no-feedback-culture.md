@@ -58,7 +58,7 @@ Work with your team to create opportunities for talking on a 1:1 basis. Ask for 
 
 If you want to drive real culture change in your team, you should search for the people who already exhibit the desired behaviours you have in mind. People tend to respond better to feedback in the form of “you do this well” rather than “you do this wrong”. Recognising and rewarding the effort of people already contributing to the team’s feedback culture is a significant step.
 
-Little things like Slack shout-outs, taking some time to recognise people’s hard work at the beginning of meetings, or even something silly like a “feedback champion of the month” badge are good ways to make feedback an integral part of your team processes. [Training your team](https://www.the10xmanager.academy/) in giving feedback can also help you structure your feedback loops to be as concise and helpful as possible.
+Little things like Slack shout-outs, taking some time to recognise people’s hard work at the beginning of meetings, or even something silly like a “feedback champion of the month” badge are good ways to make feedback an integral part of your team processes. [Training your team](/) in giving feedback can also help you structure your feedback loops to be as concise and helpful as possible.
 
 ## No room for autopilot
 

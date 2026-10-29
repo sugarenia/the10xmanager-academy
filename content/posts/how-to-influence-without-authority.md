@@ -65,7 +65,7 @@ If you want to spearhead strategic initiatives, aligning with company goals is i
 Since I wanted to make this post as pragmatic as possible, here is a list of real-life scenarios where you might be called to influence without authority, including what you should not and what you should do in each case:
 
 <table>
-<tr><td>For more actionable advice like this, check out <a href="https://www.the10xmanager.academy/coaching/sprints"><u>Management Sprints</u></a>: focused, actionable 1:1 coaching programs that solve real problems in 4 weeks.</td></tr>
+<tr><td>For more actionable advice like this, check out <a href="/coaching/sprints"><u>Management Sprints</u></a>: focused, actionable 1:1 coaching programs that solve real problems in 4 weeks.</td></tr>
 </table>
 
 #### Your Idea Versus Your Manager

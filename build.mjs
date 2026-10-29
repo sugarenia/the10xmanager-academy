@@ -6,7 +6,7 @@ import { Marked } from "marked";
 import { themed } from "./theme.mjs";
 import { postCard } from "./og-cards.mjs";
 
-const SITE = "https://www.the10xmanager.academy";
+const SITE = "https://the10xmanager.academy";
 const ROOT = new URL(".", import.meta.url).pathname;
 const OUT = join(ROOT, "dist");
 const tpl = (name) => readFileSync(join(ROOT, "templates", name), "utf8");
@@ -175,6 +175,7 @@ function archive() {
 const blogTpl = tpl("blog.html");
 const messagePage = (title, heading, text, after = "", { newsletter = true } = {}) => {
   let html = blogTpl
+    .replace(/\n<link rel="canonical"[^>]*>\n<meta property="og:url"[^>]*>/, "")
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(title)}</title>\n<meta name="robots" content="noindex">`)
     .replace(/<!-- HERO -->[\s\S]*?%%SECTIONS%%/, `<!-- MESSAGE -->
   <section style="max-width: 1200px; margin: 0 auto; padding: 120px 24px ${after ? "64px" : "120px"}">

@@ -9,7 +9,7 @@ cover: "/assets/posts/048247_3ce729ab0979465db6ff62a80775ae42.jpg"
 
 ![Flat lay of bizzare and colorful objects on white background](/assets/posts/048247_3ce729ab0979465db6ff62a80775ae42.jpg "Photo by Alexander Zabrodskiy on Unsplash")
 
-Picture yourself standing between crashing waves and a sandcastle. That's what being a middle manager feels like during a downturn—you're the barrier between organisational turbulence and your team's stability. It's a thankless job that goes far beyond the standard duties of '[giving feedback](/post/no-feedback-culture)' and '[delegating tasks](https://www.the10xmanager.academy/templates/delegation)'.
+Picture yourself standing between crashing waves and a sandcastle. That's what being a middle manager feels like during a downturn—you're the barrier between organisational turbulence and your team's stability. It's a thankless job that goes far beyond the standard duties of '[giving feedback](/post/no-feedback-culture)' and '[delegating tasks](/templates/delegation)'.
 
 Provided that a company culture maintains a basic level of trust, managers are often the first point of contact for employees feeling unsafe after receiving bad corporate news. Constantly being on the receiving end of complaints and criticism can feel draining and demoralising.
 
@@ -34,7 +34,7 @@ That's a bad idea. Situations like these have a way of blowing up in your face w
 Here are some common self-preserving thoughts that will harm your management practice:
 
 <table>
-<tr><td>If you're new to coaching, check out <a href="https://www.the10xmanager.academy/coaching/sprints"><u>Management Sprints</u></a>: give me four weeks to solve real problems with focused, actionable 1:1 coaching.</td></tr>
+<tr><td>If you're new to coaching, check out <a href="/coaching/sprints"><u>Management Sprints</u></a>: give me four weeks to solve real problems with focused, actionable 1:1 coaching.</td></tr>
 </table>
 
 #### “If I avoid talking about it, they will forget it.”

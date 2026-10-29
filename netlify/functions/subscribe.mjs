@@ -34,7 +34,7 @@ export default async (req) => {
       utm_source: "the10xmanager.academy",
       utm_medium: "website",
       utm_content: page || undefined,
-      referring_site: "https://www.the10xmanager.academy" + page,
+      referring_site: "https://the10xmanager.academy" + page,
     }),
   });
   if (!res.ok) {
