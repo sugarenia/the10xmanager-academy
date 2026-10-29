@@ -10,6 +10,8 @@ This site is run by Zaharenia Atzitzikaki, trading as The 10x Manager Academy, b
 
 **Visitor statistics.** Cloudflare Web Analytics counts page views, referring sites and countries so I can see what people read. It sets no cookies and doesn't identify or follow you across sites.
 
+**Embedded talks.** The Speaking page shows slides from Speaker Deck and videos from YouTube in privacy-enhanced mode. They load from those services, under their own privacy policies, only when you open that page.
+
 **Server logs.** Netlify keeps standard technical logs (such as IP address and browser) for security and to keep the site running. I don't use them to identify you.
 
 ## What I don't do

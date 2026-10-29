@@ -176,6 +176,7 @@ const blogTpl = tpl("blog.html");
 const messagePage = (title, heading, text, after = "", { newsletter = true } = {}) => {
   let html = blogTpl
     .replace(/\n<link rel="canonical"[^>]*>\n<meta property="og:url"[^>]*>/, "")
+    .replace(/<a href="\/blog" class="nav-link" aria-current="page" style="[^"]*">/, '<a href="/blog" class="nav-link" style="color: #AEB5C1">')
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(title)}</title>\n<meta name="robots" content="noindex">`)
     .replace(/<!-- HERO -->[\s\S]*?%%SECTIONS%%/, `<!-- MESSAGE -->
   <section style="max-width: 1200px; margin: 0 auto; padding: 120px 24px ${after ? "64px" : "120px"}">
@@ -196,6 +197,39 @@ const privacyBody = md
 const privacyPage = () =>
   messagePage("Privacy policy · The 10x Manager Academy", "Privacy policy", "What this site collects, why, and what you can ask me to do with it.", `<section style="max-width: 1200px; margin: 0 auto; padding: 0 24px 120px"><div style="max-width: 680px; font-size: 17px; line-height: 1.7; color: #AEB5C1">${privacyBody}</div></section>`)
     .replace('<meta name="robots" content="noindex">', `<meta name="description" content="How The 10x Manager Academy handles your data.">\n<link rel="canonical" href="${SITE}/privacy">`);
+
+// ---- speaking: talks for conference organisers (not in the menu; shared by link)
+const TALKS = [
+  ["e872400583f84557b849b0bd07c69244", "Voxxed Days", 2022],
+  ["9ca3eb5990bb4a7b85833223869bd372", "JS London", 2021],
+  ["287a6171c1124115a4e6096d70a04e29", "Greece JS", 2018],
+  ["b786fa1fa1b14b9b90c9ef805d7ca09c", "OpenCoffee Heraklion", 2017],
+  ["f541a87eed4c471998018c9b58eb58a2", "Devstaff Heraklion", 2016],
+  ["803f3b795f2e493b9248b7d6fe28799f", "Devstaff Heraklion", 2015],
+  ["3ade459942304a99ac891683a2562b9c", "University of Crete", 2015],
+  ["cc9ecfc0c16a0131e0fe72c781b73270", "UpNorth Conference", 2014],
+];
+const VIDEOS = ["VIi17ioJNDw", "hODZF1Sn2hw", "LxMrZXMJRrk"];
+const embedCard = (src, title, caption) =>
+  `<li style="display: flex; flex-direction: column; gap: 12px; min-width: 0"><div style="position: relative; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; background: #12161C; border: 1px solid #222731"><iframe src="${src}" title="${esc(title)}" loading="lazy" allowfullscreen allow="encrypted-media; picture-in-picture" style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0"></iframe></div>${caption}</li>`;
+const speakingGrid = (items) =>
+  `<ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr)); gap: 40px 32px">${items.join("")}</ul>`;
+const speakingLabel = (text) =>
+  `<h2 style="margin: 0 0 28px; ${MONO}; font-size: 15px; font-weight: 500; letter-spacing: 0.02em; color: #B7D26C">${text}</h2>`;
+const speakingPage = () =>
+  messagePage(
+    "Speaking · Zaharenia Atzitzikaki",
+    "Speaking",
+    'Talks I\'ve given at conferences, meetups and universities since 2014. To invite me to speak, email <a href="mailto:hello@the10xmanager.academy">hello@the10xmanager.academy</a>.',
+    `<section style="max-width: 1200px; margin: 0 auto; padding: 0 24px 72px">${speakingLabel("// slides")}${speakingGrid(
+      TALKS.map(([id, event, year]) =>
+        embedCard(`https://speakerdeck.com/player/${id}`, `Slides from ${event}, ${year}`, `<p style="margin: 0; ${MONO}; font-size: 14px; color: #AEB5C1">${esc(event)} <span style="color: #6E7684">· ${year}</span></p>`),
+      ),
+    )}</section>
+<section style="max-width: 1200px; margin: 0 auto; padding: 0 24px 120px">${speakingLabel("// videos")}${speakingGrid(
+      VIDEOS.map((id, i) => embedCard(`https://www.youtube-nocookie.com/embed/${id}`, `Talk video ${i + 1}`, "")),
+    )}</section>`,
+  ).replace('<meta name="robots" content="noindex">', `<meta name="description" content="Talks by Zaharenia Atzitzikaki on leadership, management and design.">\n<link rel="canonical" href="${SITE}/speaking">`);
 
 // ---- RSS (same address as the old Wix feed) and sitemap
 const xml = (s) => esc(s).replace(/'/g, "&apos;");
@@ -218,6 +252,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>${SITE}/</loc></url>
 <url><loc>${SITE}/privacy</loc></url>
+<url><loc>${SITE}/speaking</loc></url>
 <url><loc>${SITE}/blog</loc><lastmod>${posts[0]?.date ?? ""}</lastmod></url>
 ${posts.map((p) => `<url><loc>${SITE}${postUrl(p)}</loc><lastmod>${p.date}</lastmod></url>`).join("\n")}
 </urlset>
@@ -234,6 +269,7 @@ for (const p of posts) writeFileSync(join(OUT, "post", `${p.slug}.html`), themed
 mkdirSync(join(OUT, "assets", "og"), { recursive: true });
 for (const p of posts) writeFileSync(join(OUT, "assets", "og", `${p.slug}.png`), await postCard({ title: p.title, tag: p.topic.tag, color: p.topic.color, minutes: p.minutes }));
 writeFileSync(join(OUT, "privacy.html"), themed(privacyPage()));
+writeFileSync(join(OUT, "speaking.html"), themed(speakingPage()));
 writeFileSync(join(OUT, "404.html"), themed(messagePage("Page not found · The 10x Manager Academy", "This page doesn't exist.", 'It may have moved. Try <a href="/blog">all writing</a> or the <a href="/">homepage</a>.')));
 const CALL = "https://calendar.app.google/crG9ExWinyMXmka69";
 writeFileSync(join(OUT, "thanks.html"), themed(messagePage("Thanks · The 10x Manager Academy", "Thanks, I've got your note.", `I read every message myself and will reply by email. Want to talk sooner? <a href="${CALL}" target="_blank" rel="noopener">Book a free scoping call</a>.`, startHere("// while you wait", "0 24px 120px"))));
